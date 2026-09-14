@@ -68,7 +68,7 @@ function startSearch(type) {
                         
                         let isRelevant = false;
 
-                        const regexLevee = /(lève|levée|fonds|financement|millions?|milliards?|série|investit|raises|funding|series|secures|amorçage|seed|capital|tour de table|clôture|backing|backed|grant|subvention|dette|crowdfunding|ipo)/;
+                        const regexLevee = /(lève|levée|fonds|financement|millions?|milliards?|série|investit|raises|funding|series|secures|amorçage|seed|capital|tour de table|clôture|backing|backed|grant|subvention|dette|crowdfunding|ipo|Papernest|Selectra)/;
                         const regexMA = /(rachète|acquisition|acquiert|fusion|rachat|partenariat|passent chez|acquires|merger|buys|merges|s'offre|rejoint|absorbe|takeover|stake|participation|alliance|associe|joint venture|buyout|spin-off|reprend|intégration)/;
 
                         // NOUVEAU COMPORTEMENT POUR "VOIR TOUT" : On cherche Levées OU M&A
