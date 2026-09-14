@@ -215,3 +215,32 @@ function displayResults() {
         tbody.appendChild(tr);
     });
 }
+
+// --- GESTION DE LA FENÊTRE FONCTIONNEMENT (README) ---
+const modal = document.getElementById('readme-modal');
+const btnReadme = document.getElementById('btn-readme');
+const spanClose = document.getElementsByClassName('close-modal')[0];
+
+btnReadme.addEventListener('click', () => {
+    modal.style.display = 'block';
+    
+    // On va chercher le fichier README.md à la racine du projet
+    fetch('README.md')
+        .then(response => {
+            if(!response.ok) throw new Error("Fichier introuvable");
+            return response.text();
+        })
+        .then(text => {
+            // marked.parse() convertit le texte brut en HTML formaté
+            document.getElementById('readme-content').innerHTML = marked.parse(text);
+        })
+        .catch(err => {
+            document.getElementById('readme-content').innerHTML = "<p style='color:red;'>Erreur : Le fichier README.md n'a pas pu être chargé. Assurez-vous qu'il est présent sur le dépôt GitHub.</p>";
+        });
+});
+
+// Fermeture de la modale au clic sur la croix ou en dehors de la fenêtre
+spanClose.onclick = () => modal.style.display = 'none';
+window.onclick = (event) => {
+    if (event.target === modal) modal.style.display = 'none';
+};
