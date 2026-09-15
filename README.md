@@ -1,6 +1,6 @@
 # Radar Veille M&A et Levées de fonds
 
-Cet outil a été conçu pour automatiser la veille concurrentielle et financière dans le secteur de la transition énergétique. Il permet d'agréger, de filtrer et d'extraire des informations stratégiques (montants, entités, secteurs) à partir des principales sources d'actualités spécialisées et généralistes.
+Cet outil a été conçu pour automatiser la veille concurrentielle et financière dans le secteur de la transition énergétique. Il permet d'agréger, de filtrer et d'extraire des informations (montants, entités, secteurs) à partir des principales sources d'actualités spécialisées et généralistes (9 sources différentes)
 
 ## Fonctionnement général
 
