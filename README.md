@@ -16,6 +16,14 @@ Le moteur de recherche n'utilise pas d'intelligence artificielle coûteuse ou le
 *   **Extraction des entités :** L'algorithme repère les verbes d'action financiers et isole le sujet de la phrase, tout en nettoyant les préfixes inutiles.
 *   **Déduplication :** Si plusieurs médias traitent de la même opération le même jour, l'outil fusionne les résultats pour ne garder qu'une seule ligne par entité.
 
+## Limites de l'outil et faux positifs
+
+Le moteur de recherche privilégie volontairement l'exhaustivité (le rappel) à la sélectivité stricte : un paramétrage trop restrictif risquerait d'ignorer des opérations stratégiques dont le vocabulaire diffère légèrement de la norme journalistique. 
+
+En contrepartie de cette couverture large, certains articles captés peuvent s'avérer hors-sujet ou ne pas concerner directement une transaction financière unitaire. Dans ces situations, le système ne trouve pas de structure syntaxique exploitable et affiche un tiret `-` pour l'entité ou la mention `ND` pour le montant.
+
+Enfin, le traitement reposant sur des règles heuristiques (Regex) plutôt que sur un modèle d'apprentissage profond, l'outil n'affiche pas une précision de 100 % : certains titres aux formulations atypiques peuvent ponctuellement empêcher l'extraction correcte du montant ou du nom de l'entreprise ciblée.
+
 ## Subtilités techniques et défis résolus
 
 Plusieurs mécanismes spécifiques ont été codés pour assurer la stabilité et l'efficacité de l'outil :
